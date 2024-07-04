@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire</title>
+  <link rel="stylesheet" href="mon-formulaire.component.css">
+</head>
+
+<body>
+
+  <div class="form">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+
+      <div class="a">
+        <label for="author">Author:</label>
+        <input id="author" name="author" type="text" [(ngModel)]="book.author"  required>
+      </div>
+
+      <div class="b">
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text" [(ngModel)]="book.title" required >
+      </div>
+
+      <div class="c">
+        <label for="year">Year:</label>
+        <input id="year" name="year" type="text" [(ngModel)]="book.year" required>
+      </div>
+
+      <div class="d">
+        <button type="submit" [disabled]="!loginForm.valid">Envoyer</button>
+      </div>
+    </form>
+
+  </div>
+
+</body>
+
+</html>
